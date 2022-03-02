@@ -1,0 +1,49 @@
+
+/*
+FORM
+*/
+
+label {
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+}
+.js-form-type-managed-file label {
+    color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+}
+.description {
+    font-size: 15px;
+    color: black;
+    margin-top: -20px;
+}
+
+.guestbook-edit label{
+    color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+}
+/*
+TABLE
+*/
+
+.table .user-avatar {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    border: solid;
+}
+.table .user-image {
+    width: 200px;
+    height: auto;
+}
+.table .user-name {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.table .user-date {
+    color: cornflowerblue;
+}
+.table .user-phone {
+    width: 200px;
+}
+
+
+

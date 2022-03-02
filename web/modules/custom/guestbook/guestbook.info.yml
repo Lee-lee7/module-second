@@ -1,0 +1,6 @@
+name: Guest book by Li
+description: A module for a site that will serve as a guest book, where people can visit and leave feedback, comments, impressions and wishes.
+package: Custom
+type: module
+version: 1.0
+core_version_requirement: ^8.8.0 || ^9

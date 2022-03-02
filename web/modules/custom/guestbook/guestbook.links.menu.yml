@@ -1,0 +1,6 @@
+hello.admin:
+  title: 'Guest book / feedback page'
+  description: 'This module creates a page with a list of feedbacks and a form where users can add image and text of feedback.'
+  parent: system.admin_structure
+  route_name: guestbook.content
+  weight: 10

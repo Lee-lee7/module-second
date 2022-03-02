@@ -1,0 +1,85 @@
+<?php
+
+/**
+ * @file
+ * Install, create tables to store reviews.
+ */
+
+use Drupal\file\Entity\File;
+
+/**
+ * Implements hook_schema().
+ */
+
+function guestbook_schema(): array{
+    $schema['guestbook'] = array (
+        'description'=>'database guest book',
+        'fields' => [
+            'id' => [
+              'type' => 'serial',
+              'not null' => TRUE,
+              'unsigned' => TRUE,
+              'description' => 'Primary key',
+            ],
+            'name' => [
+                'type' => 'varchar',
+                'length' => 100,
+                //'not null' => TRUE,
+                'description' => 'User name',
+            ],
+            'email' => [
+                'type' => 'varchar',
+                'length' => 255,
+                //'not null' => TRUE,
+                'description' => 'User email',
+            ],
+            'phone' => [
+              'type' => 'varchar',
+              'length' => 18,
+             // 'not null' => TRUE,
+              'description' => 'User phone',
+            ],
+            'text' => [
+              'type' => 'text',
+             // 'not null' => TRUE,
+              'description' => 'User feedback',
+            ],
+            'avatar' => [
+              'type' => 'varchar',
+              'length' => 255,
+              'description' => 'User avatar',
+            ],
+            'image' => [
+              'type' => 'varchar',
+              'length' => 255,
+              'description' => 'User image',
+            ],
+            'timestamp' => [
+              'type' => 'int',
+            //  'not null' => TRUE,
+              'description' => 'Date created.',
+              ],
+            ],
+        'primary key' => ['id'],
+    );
+    return $schema;
+}
+/*
+Delete the database table when removing the module
+*/
+function guestbook_uninstall($is_syncing) {
+  $database = Drupal::database();
+  $result = $database->select('guestbook', 'g')
+    ->fields('g', ['avatar','image'])
+    ->execute();
+  foreach ($result as $row) {
+    if($row->avatar){
+      File::load($row->avatar)->delete();
+    }
+    if($row->image){
+      File::load($row->image)->delete();
+    } 
+  }
+}
+
+  

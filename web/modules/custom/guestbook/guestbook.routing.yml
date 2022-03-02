@@ -1,0 +1,22 @@
+guestbook.content:
+  path: "/guestbook/feedback"
+  defaults:
+    _title: 'Hello! You can add here a feedback.'
+    _form: '\Drupal\guestbook\Form\Guestform'
+    _controller: '\Drupal\guestbook\Controller\GuestController::build'
+  requirements:
+    _permission: "access content"
+
+guestdelete.content:
+  path: "/li/cats/{id}/delete"
+  defaults:
+    _form: '\Drupal\guestbook\Form\Guestdelete'
+  requirements:
+    _permission: 'administer'
+
+guestedit.content:
+  path: "/li/cats/{id}/edit"
+  defaults:
+    _form: '\Drupal\guestbook\Form\Guestedit'
+  requirements:
+    _permission: 'administer'
