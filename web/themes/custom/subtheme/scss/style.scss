@@ -1,0 +1,32 @@
+// Sub theme styling.
+@import 'variables_drupal';
+
+// Bootstrap overriden variables.
+// @see https://getbootstrap.com/docs/5.1/customize/sass/#variable-defaults.
+@import 'variables_bootstrap';
+
+// Include bootstrap.
+@import '../../../../themes/contrib/bootstrap5/scss/style';
+
+article .node__content {
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.node--type-_04 .node__content .field--type-text-with-summary{
+    font-size: 32px;
+    width: 50%;
+}
+.field--name-field-404-text-one{
+    margin-top: 80px;
+    margin-left: -450px;
+    font-size: 27px;
+    width: 50%;
+}
+.field--name-field-404-text-two{
+    margin-top: 150px;
+    margin-left: -400px;
+    font-size: 28px;
+    width: 46%;
+}
